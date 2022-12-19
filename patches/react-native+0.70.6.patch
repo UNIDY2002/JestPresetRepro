@@ -1,0 +1,16 @@
+diff --git a/node_modules/react-native/jest-preset.js b/node_modules/react-native/jest-preset.js
+index e49c406..17305c8 100644
+--- a/node_modules/react-native/jest-preset.js
++++ b/node_modules/react-native/jest-preset.js
+@@ -23,6 +23,11 @@ module.exports = {
+   transformIgnorePatterns: [
+     'node_modules/(?!((jest-)?react-native|@react-native(-community)?)/)',
+   ],
++  moduleNameMapper: {
++    '^.+\\.(bmp|gif|jpg|jpeg|mp4|png|psd|svg|webp)$': require.resolve(
++      './jest/assetFileTransformer.js',
++    ),
++  },
+   setupFiles: [require.resolve('./jest/setup.js')],
+   testEnvironment: 'node',
+ };
